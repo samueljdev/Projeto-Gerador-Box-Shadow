@@ -54,8 +54,8 @@ class BoxShadowGenerator {
     applyRule() {
         const rgbValue = this.hexToRgb(this.colorRef.value);
 
-        const shadowRule = `${this.horizontalRef.value}px ${this.verticalRef.value}px 
-        ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}`;
+        const shadowRule = `${this.insetRef ? "inset" : ""} ${this.horizontalRef.value}px ${this.verticalRef.value}px 
+        ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value}`;
 
         this.previewBox.style.boxShadow = shadowRule;
         this.currentRule = shadowRule;
